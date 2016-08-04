@@ -1,0 +1,6 @@
+{
+  "name": "Pokeygo",
+  "tagline": "A Pokèmon Go journaling application",
+  "body": "Pokèmon Go is all the rage, but it can be a bit frustrating to remember where all the gyms and pokèstops are or where you caught all those sweet Bellsprouts at.\r\n\r\nIn this crash course, we'll make an application that allows users to journal their Pokèmon Go experiences, record the locations of pokèstops and gyms, and then map them.\r\n\r\nAs a bonus: You can also get walking or driving directions to a particular pokèstop or gym.\r\n\r\nSweet!\r\n\r\nThings we'll cover:\r\n\r\n- Goecoding & Geolocation\r\n- Google Maps\r\n- Rails\r\n- Ruby\r\n- MVC architecture\r\n- HTML Forms\r\n- More Pokèmon than you can shake a pokèball at",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
