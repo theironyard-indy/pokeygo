@@ -21,7 +21,7 @@ $(document).ready(function(){
           handler.map.centerOn({ lat: position.coords.latitude, lng: position.coords.longitude })
           markers = handler.addMarkers(markers_to_add);
           handler.fitMapToBounds();
-          handler.getMap().setZoom(18);
+          handler.getMap().setZoom(12);
         });
       }
     }

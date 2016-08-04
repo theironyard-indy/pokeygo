@@ -3,7 +3,7 @@ class SightingsController < ApplicationController
   before_action :authenticate_trainer!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @sightings = Sighting.order(created_at: :desc).limit(20)
+    @sightings = Sighting.order(created_at: :desc).limit(7)
     marker_sightings = Sighting.all
     respond_to do |format|
       format.json {
