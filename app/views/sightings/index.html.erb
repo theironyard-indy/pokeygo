@@ -1,0 +1,7 @@
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+<% @sightings.each do |sighting| %>
+  <%= simple_format sighting.body %>
+  <p class="small"><%= sighting.category.name %> reported: <%= sighting.created_at.to_s(:long) %></p>
+<% end %>

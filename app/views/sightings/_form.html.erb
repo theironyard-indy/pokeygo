@@ -1,0 +1,9 @@
+<%= simple_form_for @sighting do |f| %>
+  <%= f.association :category %>
+  <%= f.input :body %>
+  <%= f.input :full_address %>
+  <h6>or ...</h6>
+  <%= f.input :lat, label: "Latitude" %>
+  <%= f.input :lng, label: "Longitude" %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

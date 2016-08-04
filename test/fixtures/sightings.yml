@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: 1.5
+  lng: 1.5
+  full_address: MyString
+  body: MyText
+  trainer: one
+  category: one
+
+two:
+  lat: 1.5
+  lng: 1.5
+  full_address: MyString
+  body: MyText
+  trainer: two
+  category: two
