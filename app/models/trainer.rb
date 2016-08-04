@@ -3,4 +3,9 @@ class Trainer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :sightings
+
+  def name
+    "Trainer ##{id}"
+  end
+
 end

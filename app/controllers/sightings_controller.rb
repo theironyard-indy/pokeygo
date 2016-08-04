@@ -3,14 +3,12 @@ class SightingsController < ApplicationController
   before_action :authenticate_trainer!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @sightings = Sighting.all
+    @sightings = Sighting.order(created_at: :desc).limit(20)
+    marker_sightings = Sighting.all
     respond_to do |format|
       format.json {
-        @hash = Gmaps4rails.build_markers(@sightings) do |sighting, marker|
-          marker.lat sighting.lat
-          marker.lng sighting.lng
-        end
-        render json: @hash
+        @markers = sightings_markers(marker_sightings)
+        render json: @markers
       }
       format.html {}
     end
@@ -59,6 +57,14 @@ class SightingsController < ApplicationController
 
   def sighting_params
     params.require(:sighting).permit(:body, :category_id, :full_address, :lat, :lng)
+  end
+
+  def sightings_markers(sightings)
+    Gmaps4rails.build_markers(sightings) do |sighting, marker|
+      marker.lat sighting.lat
+      marker.lng sighting.lng
+      marker.infowindow "<img width='50' height='50' src='#{ActionController::Base.helpers.asset_url(sighting.map_icon, type: :image)}' /><p>#{sighting.body}</p>"
+    end
   end
 
 end

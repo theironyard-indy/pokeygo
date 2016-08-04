@@ -1,7 +1,10 @@
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<div class="col-md-9">
+  <div id="map"></div>
 </div>
-<% @sightings.each do |sighting| %>
-  <%= simple_format sighting.body %>
-  <p class="small"><%= sighting.category.name %> reported: <%= sighting.created_at.to_s(:long) %></p>
-<% end %>
+<div class="col-md-3">
+  <h4>Recent Sightings</h4>
+  <% @sightings.each do |sighting| %>
+    <%= simple_format sighting.body %>
+    <p class="small"><%= sighting.category.name %> reported by <%= sighting.trainer.name %> on <%= sighting.created_at.to_s(:long) %></p>
+  <% end %>
+</div>

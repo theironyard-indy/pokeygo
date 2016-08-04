@@ -19,9 +19,9 @@ $(document).ready(function(){
         handler = Gmaps.build('Google');
         handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
           handler.map.centerOn({ lat: position.coords.latitude, lng: position.coords.longitude })
-          handler.addMarkers(markers_to_add);
-          handler.bounds.extendWith(markers);
+          markers = handler.addMarkers(markers_to_add);
           handler.fitMapToBounds();
+          handler.getMap().setZoom(18);
         });
       }
     }
